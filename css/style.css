@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Roboto:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Caveat', cursive;
+}
+
+.block-scroll {
+    overflow: hidden;
+}
+
+section {
+    margin: 70px 0;
+}
+
+.header-container {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 720px;
+    align-items: center;
+}
+
+header {
+    background: url(../img/background/main.jpg);
+    background-size: cover;
+}
+
+.head {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#number {
+    font-size: 22px;
+    text-align: end;
+}
+
+.booking {
+    text-align: center;
+}
+
+.booking-btn { 
+    border-radius: 30px;
+    border: white 4px solid;
+    padding: 20px 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.booking-btn:hover { 
+    background-color: rgb(231, 225, 225);
+    border: rgb(231, 225, 225) 4px solid;
+}
+
+.booking-pop {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.7);
+    z-index: 100;
+    margin: 0 0;
+}
+
+.booking-container {
+    position: absolute;
+    background-color: #daeceb;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 630px;
+    border-radius: 30px;
+    overflow: hidden;
+    outline: none;
+}
+
+.head-booking {
+    background-color: black;
+    color: white;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 25px;
+    padding: 15px 0;
+}
+
+.close-btn {
+    background: none;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.main-booking {
+    margin-top: 60px;
+}
+
+.main-booking h2 {
+    font-size: 30px;
+}
+
+.up-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.login-pls {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 30px 0;
+    font-size: 30px;
+}
+
+.date-bookuing input{
+    width: 200px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid black;
+    margin-top: 10px;
+}
+
+.people-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.people-bookuing span, input{
+    width: 60px;
+    height: 100%;
+    font-size: 30px;
+    border: 2px solid black;
+    text-align: center;
+    outline: none;
+    background: none;
+    text-align: center;
+}
+
+.people-btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name-bookuing input{
+    width: 500px;
+    text-align: start;
+}
+
+.down-container {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;;
+}
+
+.time {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.time-container {
+    font-size: 25px;
+    border: 1px solid;
+    padding: 15px;
+    cursor: pointer;
+}
+
+input:checked + .time-container {
+    background-color: #030303;
+    color: white;
+}
+
+.time-box {
+    margin: 15px 0;
+}
+
+.time-btn{
+    display: none;
+    width: 100%;
+}
+
+.comments {
+    margin-top: 15px;
+    width: 70%;
+    text-align: start;
+    border-radius: 5px;
+    padding: 10px;
+    border: 3px solid black;
+    background: none;
+}
+
+.footer-booking {
+    margin: 60px 0 15px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-booking button {
+    height: 50px;
+    font-size: 25px;
+    border: 2px solid black;
+    padding: 0 15px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.footer-booking button:hover {
+    background-color: rgb(228, 219, 219);
+}
+
+.date {
+    font-size: 17px;
+    margin: 5px;
+}
+
+main {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* Менюшка */
+
+.menu-container {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: black;
+    width: 300px;
+    height: 100%;
+    transition: all 0.3s ease;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hide-menu {
+    left: -100%;
+}
+
+.menu-btn {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu-head {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    font-size: 22px;
+}
+
+.menu-main {
+    font-size: 30px;
+    text-align: center;
+}
+
+.menu-main div {
+    margin: 10px 0;
+}
+
+.menu-main a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-main a:hover {
+    color: rgb(182, 176, 176);
+}
+
+.social-network {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-network a{
+    margin: 10px;
+}
+
+.menu-footer .addres{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.addres span{
+    color: rgb(182, 176, 176);
+}
+
+.menu-footer {
+    margin-bottom: 20px;
+}
+/* Описание рестика */
+
+.discription {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.discription-text {
+    max-width: 500px;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+}
+
+.discription-img {
+    width: 500px;
+    transition: transform 0.5s ease;
+}
+
+.discription-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.discription-img:hover{
+    transform: scale(1.1);
+}
+
+/* Афиша */
+
+.events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.events-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.card-event {
+    width: 230px;
+    height: 500px;
+    color: white;
+    position: relative;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+    background-color: black;
+    overflow: hidden;
+}
+
+.card-event h3 {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+}
+
+.card-event img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0px 0px 11px 0px #000;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.card-event:hover img{
+    transform: scale(1.1);
+}
+
+/* Яндекс карта */
+
+.map iframe {
+    box-shadow: 0px 0px 11px 0px #000;
+}
+
+footer {
+    max-width: 1500px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer-menu a{
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 20px;
+    transition: color 0.2s ease;
+}
+
+.footer-menu a:hover{
+    color: rgb(192, 187, 187);
+}
+
+.footer-addres {
+    display: flex;
+    align-items: center;
+}
+
+.footer-addres p{
+    margin: 0 50px;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.disable {
+    display: none;
+}
+

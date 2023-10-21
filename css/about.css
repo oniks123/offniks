@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Roboto:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Caveat', cursive;
+}
+
+.block-scroll {
+    overflow: hidden;
+}
+
+.header-container {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    align-items: center;
+}
+
+header {
+    background: url(../img/background/main.jpg);
+    background-size: cover;
+}
+
+.head {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
+#number {
+    font-size: 22px;
+    text-align: end;
+}
+
+
+/* Менюшка */
+
+.menu-container {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: black;
+    width: 300px;
+    height: 100%;
+    transition: all 0.3s ease;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hide-menu {
+    left: -100%;
+}
+
+.menu-btn {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu-head {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    font-size: 22px;
+}
+
+.menu-main {
+    font-size: 30px;
+    text-align: center;
+}
+
+.menu-main div {
+    margin: 10px 0;
+}
+
+.menu-main a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-main a:hover {
+    color: rgb(182, 176, 176);
+}
+
+.social-network {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-network svg{
+    margin: 10px;
+}
+
+.menu-footer .booking-btn {
+    padding: 10px;
+    width: 80%;
+    height: 20%;
+    margin: 0 auto;
+}
+
+.menu-footer .addres{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.addres span{
+    color: rgb(182, 176, 176);
+}
+
+.menu-footer {
+    margin-bottom: 20px;
+}
+
+/* о нас */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: 150px auto;
+}
+
+.about p {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.progress {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px 100px;
+    margin-top: 50px;
+    width: 750px;
+    justify-items: center;
+}
+
+.progress-container {
+    width: 80%;
+    padding: 20px;
+    border-top: rgba(0, 0, 0, 0.411) 1px solid;
+}
+
+.progress-container .title {
+    font-size: 62px;
+}
+
+.progress-container .sub-title {
+    font-size: 17px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/*Отзовы */
+
+#feedback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+.feedback-container {
+    margin: 30px 0;
+}
+
+.feedback-post { 
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0px 0px 4px 0px #00000059;
+    width: 820px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 15px;
+
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.name {
+    font-size: 30px;
+}
+
+.claim{
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.claim-svg {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.feedback-post:hover { 
+    .claim{
+        display: block;
+    }
+}
+
+.claim-container {
+    display: none;
+    position: absolute;
+    z-index: 1001;
+    top: 30px;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 4px 0px #00000059;
+    width: 380px;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+.reason {
+    margin-top: 5px;
+}
+
+.other {
+    margin: 15px;
+    display: none;   
+}
+
+.other textarea {
+    font-family: 'Roboto', sans-serif;
+    width: 330px;
+    min-height: 130px;
+    max-height: 350px;
+    resize: vertical;
+    padding: 10px;
+    outline: none;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.reason label {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.reason p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.reason input {
+    margin-right: 15px;
+}
+
+.reason:hover {
+    background-color: rgb(248, 244, 244);
+}
+
+.claim-btn {
+    display: flex;
+    justify-content: end;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+
+.claim-btn button {
+    outline: none;
+    border-radius: 7px;
+    background-color: white;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.active {
+    display: block;
+}
+
+.photo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.rating div {
+    background-color: #efe6e6;
+    margin: 0 7px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: black;
+}
+
+.dignities p, .disadvantages p {
+    padding: 0 13px;
+    margin: 5px 0;
+    max-height: 166px;
+    overflow-y: auto;
+}
+
+.evaluation {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+}
+
+.likes div {
+    margin: 0 7px;
+}
+
+.like-count {
+    background-color: #f0f8e1;
+    padding: 0 12px;
+    border-radius: 7px;
+}
+
+.like-btn, .dislike-btn {
+    cursor: pointer;
+}
+
+/* Подвал */
+footer {
+    max-width: 1500px;
+    margin: 70px auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.social-network {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-network svg{
+    margin: 10px;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer-menu a{
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 20px;
+    transition: color 0.2s ease;
+}
+
+.footer-menu a:hover{
+    color: rgb(192, 187, 187);
+}
+
+.footer-addres {
+    display: flex;
+    align-items: center;
+}
+
+.footer-addres p{
+    margin: 0 50px;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.disable {
+    display: none;
+}

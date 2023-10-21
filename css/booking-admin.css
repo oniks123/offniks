@@ -1,0 +1,64 @@
+.menu main{
+    height: 100%;
+}
+
+.booking-container{
+    overflow: auto;
+    overflow-x: hidden;
+    height: 80vh;
+    width: 100%;
+}
+
+.description {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    border: 1px solid black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.booking-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+    padding: 15px 0;
+    background-color: white;
+    border: 1px black solid;
+    font-size: 20px;
+}
+
+.cancel{
+    border: 2px rgb(255, 0, 0) solid;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+.cancel button {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cancel:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.cancel:hover button{
+    color: white;
+}
