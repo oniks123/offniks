@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 192.168.1.2:3306
--- Время создания: Окт 13 2023 г., 13:53
+-- Время создания: Окт 21 2023 г., 22:42
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -46,7 +46,54 @@ CREATE TABLE `bookings` (
 INSERT INTO `bookings` (`id`, `data`, `person`, `time`, `comments`, `name`, `owner`, `Status`, `Reason`) VALUES
 (2, '2023-09-24', 6, '13:00:00', 'Пицца', 'Kirill Oniks', 1, 'Одобрено', ''),
 (32, '2023-09-24', 6, '13:00:00', 'Пицца', 'Kirill Oniks', 1, 'Отменено', 'Потому что потому'),
-(33, '2023-09-30', 4, '12:00:00', 'gsdfgsdfg', 'Антон', 1, 'Отменено', '');
+(35, '2023-10-14', 4, '15:00:00', 'Хочу пиццу', 'Kirill', 1, 'Одобрено', '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `claim-feedback`
+--
+
+CREATE TABLE `claim-feedback` (
+  `id` int NOT NULL,
+  `IDpost` int NOT NULL,
+  `reson` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `claim-feedback`
+--
+
+INSERT INTO `claim-feedback` (`id`, `IDpost`, `reson`, `description`) VALUES
+(1, 1, 'spam', '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int NOT NULL,
+  `user` int NOT NULL,
+  `data` date NOT NULL,
+  `general` int NOT NULL,
+  `eat` int NOT NULL,
+  `service` int NOT NULL,
+  `atmosphere` int NOT NULL,
+  `dignities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `disadvantages` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `likes` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `user`, `data`, `general`, `eat`, `service`, `atmosphere`, `dignities`, `disadvantages`, `likes`) VALUES
+(1, 1, '2023-10-31', 3, 4, 5, 6, 'Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть Не ну вообщем туда сюда еда приятен, сервис прелесть ', 'Отсутствует', 100),
+(4, 7, '2023-10-31', 5, 5, 5, 5, 'Вкусно и точка', 'Отсутствует', 100);
 
 -- --------------------------------------------------------
 
@@ -155,6 +202,20 @@ ALTER TABLE `bookings`
   ADD KEY `owner` (`owner`);
 
 --
+-- Индексы таблицы `claim-feedback`
+--
+ALTER TABLE `claim-feedback`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDpost` (`IDpost`);
+
+--
+-- Индексы таблицы `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user` (`user`);
+
+--
 -- Индексы таблицы `menu`
 --
 ALTER TABLE `menu`
@@ -165,8 +226,7 @@ ALTER TABLE `menu`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `number` (`number`);
+  ADD KEY `name` (`name`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -176,7 +236,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT для таблицы `claim-feedback`
+--
+ALTER TABLE `claim-feedback`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT для таблицы `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `menu`
@@ -188,7 +260,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -199,6 +271,18 @@ ALTER TABLE `users`
 --
 ALTER TABLE `bookings`
   ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`owner`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `claim-feedback`
+--
+ALTER TABLE `claim-feedback`
+  ADD CONSTRAINT `claim-feedback_ibfk_1` FOREIGN KEY (`IDpost`) REFERENCES `feedback` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `feedback`
+--
+ALTER TABLE `feedback`
+  ADD CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
