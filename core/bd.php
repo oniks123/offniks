@@ -1,6 +1,6 @@
 <?php 
 
-   $bd = mysqli_connect('127.0.0.1', 'root', '', 'oniks');
+   $bd = mysqli_connect('192.168.1.1', 'root', '', 'oniks');
 
 ?>
    
