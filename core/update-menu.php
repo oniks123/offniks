@@ -10,8 +10,6 @@
         $new_img = $_FILES["img"];
         $type = $_POST["type"];
 
-        var_dump($_POST);
-
         if ($new_img["name"] == "") 
         {
             $update = (mysqli_query($bd, 

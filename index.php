@@ -11,7 +11,7 @@
 
 <?php
     session_start();
-    require ("./core/bd.php");  
+    require ("./core/bd.php");
 ?>
     <header>
 

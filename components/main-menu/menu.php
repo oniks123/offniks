@@ -16,8 +16,8 @@
                 ?> 
                 
                     <div class="profile"><?
-                        $user_progile = mysqli_fetch_assoc( mysqli_query($bd, "SELECT * FROM `users` WHERE `id` = $_SESSION[uid]"));
-                        echo $user_progile["name"];
+                        $user_profile = mysqli_fetch_assoc( mysqli_query($bd, "SELECT * FROM `users` WHERE `id` = $_SESSION[uid]"));
+                        echo $user_profile["name"];
                     ?></div>
 
                 <?
@@ -30,14 +30,14 @@
                 <?
             }
 
-            if ($user_progile["role"] == "admin") {
+            if ($_SESSION && $user_profile["role"] == "admin") {
                 ?> 
                 
                     <div class="logout"><a href="./admin/users.php">Админ панель</a></div>
 
                 <?
             }
-
+        
         ?>
         
         <div>

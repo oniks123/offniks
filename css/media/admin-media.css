@@ -1,0 +1,40 @@
+@media screen and (max-width: 1190px) {
+    body{
+        margin: auto;
+    }
+
+    .info_blocks {
+        display: flex;
+        margin: 45px auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .block {
+        padding: 17px 0;
+        width: 100%;
+    }
+    
+    .accounts {
+        display: flex;
+        grid-gap: 25px 60px;
+        grid-template-columns: none;
+        width: auto;
+        margin: 45px auto;
+        font-size: 21px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .form_edit_account form{
+        padding: 15px 45px;
+    }
+
+    .body_form_edit p{
+        margin: 5px 0;
+    }
+
+    .body_form_edit div{
+        margin: 20px 0;
+    }
+}
